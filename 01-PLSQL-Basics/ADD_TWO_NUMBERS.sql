@@ -1,0 +1,11 @@
+DECLARE
+X INT;
+Y INT;
+
+BEGIN
+X:=4;
+Y:=5;
+DBMS_OUTPUT.PUT_LINE(X+Y);
+
+END;
+/
