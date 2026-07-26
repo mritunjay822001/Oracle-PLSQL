@@ -1,0 +1,25 @@
+DECLARE
+v_pname players.pname%type;
+v_runs players.runs%type;
+v_sixes players.sixes%type;
+v_fours players.fours%type;
+v_debut players.debut%type;
+   
+   BEGIN
+    v_pname:=&pname;
+	SELECT pname,runs,sixes,fours,debut INTO v_pname,
+	v_runs,v_sixes,v_fours,v_debut	
+	FROM players
+	WHERE v_pname=pname;
+	dbms_output.put_line('pname='||v_pname||' '||'runs='||v_runs
+	||'  '||'sixes='||v_sixes||' '||'fours='||v_fours||' '||
+	'debut='||v_debut);
+	end;
+	/
+																																										
+																																																																																								
+																																																																																								
+																																																																																								
+		
+																												
+																												

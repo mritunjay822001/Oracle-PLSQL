@@ -1,0 +1,17 @@
+DECLARE 
+v_empno emp.empno%type;
+v_amount FLOAT ;
+ BEGIN 
+ v_empno:=&empno;
+ v_amount:=&amount;
+  
+ UPDATE emp SET sal=sal+v_amount
+ WHERE empno=v_empno;
+ 
+ IF sql%notfound THEN 
+ dbms_output.put_line('INVALID EMPLOYEE NUMBER'):
+  ELSE 
+  dbms_output.put_line('SAL INCREASED>>>');
+  END if;
+  END ;
+  /

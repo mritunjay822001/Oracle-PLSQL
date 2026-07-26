@@ -1,0 +1,22 @@
+DECLARE 
+v_empno emp.empno%type;
+v_deptno emp.deptno%type;
+v_message varchar2(15);
+ BEGIN 
+ v_empno:=&empno;
+  SELECT deptno INTO v_deptno
+  FROM emp
+  WHERE empno=v_empno;
+  
+   IF v_deptno=30 THEN 
+   v_message:='SALES';
+    elsif v_depnto=10 THEN 
+	v_message:='MANAGER';
+	elsif v_deptno=20 THEN 
+	v_message:='ANALYST';
+	ELSE 
+	v_message:='OTHERS';
+	END IF ;
+	dbms_output.put_line(v_message);
+	END;
+	/

@@ -1,0 +1,13 @@
+DECLARE
+v_empno emp.empno%type;
+v_ename emp.ename%type;
+v_hiredate emp.hiredate%type;
+
+BEGIN
+ v_empno:=&empno;
+  SELECT empno,ename,hiredate INTO v_empno,v_ename,v_hiredate
+  FROM emp
+  WHERE v_empno=empno;
+  dbms_output.put_line('empno='||v_empno||'  '||'ename='||v_ename||'  '||'hiredate='||v_hiredate);
+  end;
+  /

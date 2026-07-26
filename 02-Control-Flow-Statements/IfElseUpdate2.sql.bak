@@ -1,0 +1,23 @@
+DECLARE
+v_empno emp.empno%type;
+v_deptno emp.deptno%type;
+v_per float;
+
+ BEGIN 
+  v_empno:=&empno;
+  
+   SELECT deptno INTO v_deptno
+   FROM emp
+   WHERE v_empno=empno;
+    IF v_deptno=30 THEN 
+	v_per:=15.7;
+	ELSE
+    v_per:=12.3;
+	END IF;
+	UPDATE emp SET sal=sal+sal*v_per/100
+	WHERE v_empno=empno;
+	 commit;
+	  dbms_output.put_line('deptno='||v_deptno);
+	  dbms_output.put_line(v_per||'% on sal increased....');
+	  END;
+	  /

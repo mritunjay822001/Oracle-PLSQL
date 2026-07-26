@@ -1,0 +1,23 @@
+DECLARE
+
+v_empno emp.empno%type;
+v_hiredate date;
+v_exp int;
+ 
+ BEGIN
+   
+   v_empno:=&empno;
+   
+     SELECT hiredate INTO v_hiredate FROM emp    
+ where v_empno=empno;
+	v_exp:=trunc((sysdate-hiredate)/365);
+	dbms_output.put_line('experience='||v_exp||'years');
+	
+	IF v_exp>43 THEN
+ DELETE FROM emp 
+ WHERE empno=v_empno;
+ commit;
+ dbms_output.put_line('record deleted......');
+  END if;
+  end;
+  /
