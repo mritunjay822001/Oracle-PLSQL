@@ -9,8 +9,8 @@
    <STATEMENTS>
    END;
    /
-   --
+   
    
    
    WE HAVE TO LOGIN AS DBA TO RUN THIS TRIGGER IT WILL NOT WOTK ON TABLE LEVEL TRIGGER
-   --
+  
